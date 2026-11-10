@@ -331,16 +331,33 @@
             50% { box-shadow: 0 0 30px rgba(0, 255, 204, 0.9), 0 0 50px rgba(0, 255, 204, 0.3); }
         }
 
-        /* ===== СУПЕР КНИГИ ===== */
+        /* ===== СУПЕР КНИГИ (вертикально) ===== */
+        #books-panel {
+            position: absolute;
+            left: 6px;
+            top: 290px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+            align-items: center;
+            border: 2px solid #f39c12;
+            box-shadow: 0 0 20px rgba(243, 156, 18, 0.6);
+            z-index: 8;
+            background: rgba(10, 8, 25, 0.92);
+            border-radius: 8px;
+            padding: 5px;
+        }
+
         .btn-superbook {
             background: linear-gradient(135deg, #f39c12, #e67e22, #d35400);
             color: #fff;
             border: 2px solid #f1c40f;
             font-size: 5px;
-            padding: 5px 7px;
+            padding: 5px 8px;
             text-shadow: 0 0 6px #000;
             box-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
             min-width: 22px;
+            text-align: center;
         }
         .btn-superbook:hover {
             background: linear-gradient(135deg, #f1c40f, #f39c12, #e67e22);
@@ -450,6 +467,150 @@
             opacity: 1 !important;
         }
 
+        /* ===== ПРЕДСТАРТОВАЯ ЗАПАРОЛЕННАЯ СТРАНИЦА ===== */
+        #prestart-screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 30;
+            text-align: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+
+        #prestart-screen h1 {
+            font-size: 20px;
+            color: #f1c40f;
+            text-shadow: 3px 3px 0 #000, 0 0 20px #f1c40f;
+            margin-bottom: 10px;
+        }
+
+        #prestart-screen h2 {
+            font-size: 10px;
+            color: #2ecc71;
+            text-shadow: 0 0 15px #2ecc71;
+            margin-bottom: 14px;
+        }
+
+        #prestart-screen p {
+            font-size: 8px;
+            line-height: 1.8;
+            color: #ddd;
+            margin-bottom: 12px;
+            max-width: 85%;
+        }
+
+        #prestart-screen .price-badge {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+            border-radius: 8px;
+            padding: 8px 16px;
+            margin-bottom: 14px;
+            font-size: 11px;
+            color: #e74c3c;
+            text-shadow: 0 0 12px #e74c3c;
+        }
+
+        #prestart-screen .contacts {
+            background: rgba(52, 152, 219, 0.15);
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 14px;
+            font-size: 7px;
+            line-height: 1.8;
+            color: #3498db;
+        }
+
+        #prestart-screen .contacts strong {
+            color: #f1c40f;
+        }
+
+        #prestart-screen .password-box {
+            background: rgba(241, 196, 15, 0.1);
+            border: 2px dashed #f1c40f;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 14px;
+            width: 85%;
+            max-width: 400px;
+        }
+
+        #prestart-screen .password-box label {
+            display: block;
+            font-size: 7px;
+            color: #f1c40f;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px #f1c40f;
+        }
+
+        #prestart-screen input[type="password"] {
+            background: #0a0a15;
+            color: #2ecc71;
+            border: 2px solid #f1c40f;
+            border-radius: 4px;
+            padding: 10px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 9px;
+            text-align: center;
+            width: 90%;
+            outline: none;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+        }
+
+        #prestart-screen input[type="password"]:focus {
+            border-color: #2ecc71;
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.6);
+        }
+
+        #prestart-screen .error-msg {
+            color: #e74c3c;
+            font-size: 7px;
+            min-height: 12px;
+            margin-bottom: 8px;
+            text-shadow: 0 0 8px #e74c3c;
+        }
+
+        #prestart-screen .prestart-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 14px;
+            max-width: 500px;
+        }
+
+        #prestart-screen .prestart-buttons .btn {
+            font-size: 5px;
+            padding: 6px 8px;
+        }
+
+        #prestart-screen .unlock-btn {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: #fff;
+            border: 2px solid #fff;
+            font-size: 9px;
+            padding: 10px 20px;
+            box-shadow: 0 0 25px rgba(46, 204, 113, 0.8);
+            animation: pulse-unlock 1.5s infinite;
+        }
+        #prestart-screen .unlock-btn:hover {
+            background: linear-gradient(135deg, #58d68d, #2ecc71);
+            box-shadow: 0 0 40px rgba(46, 204, 113, 1);
+        }
+        @keyframes pulse-unlock {
+            0%, 100% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.7); }
+            50% { box-shadow: 0 0 35px rgba(46, 204, 113, 1); }
+        }
+
         /* ЭКРАН СТАРТА */
         #start-screen {
             position: absolute;
@@ -458,7 +619,7 @@
             width: 100%;
             height: 100%;
             background: rgba(15, 12, 41, 0.9);
-            display: flex;
+            display: none;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -488,6 +649,8 @@
             #left-panel .btn, #right-panel .btn { min-width: 90px; }
             #start-screen h1 { font-size: 16px; }
             #sound-toggle { right: 100px; top: 24px; width: 24px; height: 24px; font-size: 10px; }
+            #prestart-screen h1 { font-size: 14px; }
+            #prestart-screen h2 { font-size: 8px; }
         }
     </style>
 </head>
@@ -520,6 +683,16 @@
         <a class="btn btn-sekret" href="https://s87890473-art.github.io/sekret/" target="_blank">🔮 SEKRET</a>
     </div>
 
+    <!-- ===== СУПЕР КНИГИ (вертикально, рядом с левой панелью) ===== -->
+    <div id="books-panel">
+        <div class="side-panel-title" style="color: #f39c12; text-shadow: 0 0 8px #f39c12; border-bottom: 1px dashed #f39c12;">📚 СУПЕР КНИГИ</div>
+        <a class="btn btn-superbook" href="https://chitalkin.com/kniga/lomakin-voshozhdenie-na-vershinu-mira-ili-kak-ya-stal?ysclid=mw58btvwow347794536" target="_blank" title="Восхождение на вершину мира">1</a>
+        <a class="btn btn-superbook" href="https://litportal.ru/avtory/aleksando-lomakin-34128959/kniga-khristodollars-74723024-1479981/?ysclid=mw57vdsyzs58739883" target="_blank" title="Христодоллары">2</a>
+        <a class="btn btn-superbook" href="https://bookz.ru/authors/aleksando-lomakin-34128959/book-ia-lechu-ia-vrach-dushi-cheloveka-ili-kak-istseliat-liud-74722947-1826690" target="_blank" title="Я лечу. Я врач души человека">3</a>
+        <a class="btn btn-superbook" href="https://www.ozon.ru/product/svet-v-dengah-aleksando-lomakin-elektronnaya-kniga-6278356717/?sh=GBnPUrOnvw" target="_blank" title="Свет в деньгах">4</a>
+        <a class="btn btn-superbook" href="https://www.litres.ru/book/aleksando-lomakin-34128959/hristodollars-74728462/" target="_blank" title="Христодоллары (ЛитРес)">5</a>
+    </div>
+
     <!-- ===== ПРАВАЯ ПАНЕЛЬ (XCD) ===== -->
     <div id="right-panel" class="side-panel">
         <div class="side-panel-title">⛓️ XCD</div>
@@ -550,30 +723,53 @@
         <a class="btn btn-sekret" href="https://s87890473-art.github.io/sekret/" target="_blank">🔮 SEKRET</a>
     </div>
 
-    <!-- ===== СУПЕР КНИГИ ===== -->
-    <div id="books-panel" class="side-panel" style="position: absolute; left: 6px; bottom: 6px; border: 2px solid #f39c12; box-shadow: 0 0 20px rgba(243, 156, 18, 0.6); z-index: 8;">
-        <div class="side-panel-title" style="color: #f39c12; text-shadow: 0 0 8px #f39c12; border-bottom: 1px dashed #f39c12;">📚 СУПЕР КНИГИ</div>
-        <div style="display: flex; gap: 3px; flex-wrap: wrap; justify-content: center;">
-            <a class="btn btn-superbook" href="https://chitalkin.com/kniga/lomakin-voshozhdenie-na-vershinu-mira-ili-kak-ya-stal?ysclid=mw58btvwow347794536" target="_blank" title="Восхождение на вершину мира">1</a>
-            <a class="btn btn-superbook" href="https://litportal.ru/avtory/aleksando-lomakin-34128959/kniga-khristodollars-74723024-1479981/?ysclid=mw57vdsyzs58739883" target="_blank" title="Христодоллары">2</a>
-            <a class="btn btn-superbook" href="https://bookz.ru/authors/aleksando-lomakin-34128959/book-ia-lechu-ia-vrach-dushi-cheloveka-ili-kak-istseliat-liud-74722947-1826690" target="_blank" title="Я лечу. Я врач души человека">3</a>
-            <a class="btn btn-superbook" href="https://www.ozon.ru/product/svet-v-dengah-aleksando-lomakin-elektronnaya-kniga-6278356717/?sh=GBnPUrOnvw" target="_blank" title="Свет в деньгах">4</a>
-            <a class="btn btn-superbook" href="https://www.litres.ru/book/aleksando-lomakin-34128959/hristodollars-74728462/" target="_blank" title="Христодоллары (ЛитРес)">5</a>
-        </div>
-    </div>
-
-    <!-- ===== ЦЕНТРАЛЬНАЯ ПАНЕЛЬ ===== -->
+    <!-- ===== ЦЕНТРАЛЬНАЯ ПАНЕЛЬ (внизу) ===== -->
     <div id="center-panel" class="center-panel">
         <a class="btn btn-vk" href="https://vk.ru/id1129303474" target="_blank">🔵 ВК</a>
         <a class="btn btn-museum" href="https://hristodolarslife.github.io/MuseiHristodolars/" target="_blank">🏛️ MUSEUM</a>
         <a class="btn btn-bonus" href="https://hristodolarslife.github.io/Casino-hristodolars-/" target="_blank">🎁 БОНУС ИГРА</a>
-        <a class="btn btn-play" href="https://hristodollars-game.poehali.ws/" target="_blank">▶ ИГРАТЬ</a>
     </div>
 
     <!-- СВЕЧА -->
     <div id="candle">🕯️</div>
 
-    <!-- СТАРТОВЫЙ ЭКРАН -->
+    <!-- ===== ПРЕДСТАРТОВАЯ ЗАПАРОЛЕННАЯ СТРАНИЦА ===== -->
+    <div id="prestart-screen">
+        <h1>ХРИСТОДОЛЛАРЫ</h1>
+        <h2>🔒 ДОСТУП ЗАКРЫТ</h2>
+
+        <div class="price-badge">💰 ЦЕНА ДОСТУПА: 5000 РУБЛЕЙ</div>
+
+        <p>
+            Путь паломника в Белокурихе.<br>
+            Играющих: 103 300 700<br>
+            Пройди 10 уровней и получи главный приз!
+        </p>
+
+        <div class="contacts">
+            📞 <strong>Связаться с автором:</strong><br>
+            📱 WhatsApp / Telegram:<br>
+            <strong>8 902 143 35 15</strong><br>
+            💬 <a href="https://max.ru/join/7L4pJP-zPWQPx5KhVoBB8vN34m2RsOwICIHoQizD7CU" target="_blank" style="color:#2ecc71; text-decoration:none;">Группа Макс</a>
+        </div>
+
+        <div class="password-box">
+            <label>🔑 ВВЕДИТЕ ПАРОЛЬ ДОСТУПА:</label>
+            <input type="password" id="prestart-password" placeholder="• • • • • • • •" onkeydown="if(event.key==='Enter') checkPrestartPassword()">
+            <div class="error-msg" id="prestart-error"></div>
+            <button class="btn unlock-btn" onclick="checkPrestartPassword()">🔓 ОТКРЫТЬ ИГРУ</button>
+        </div>
+
+        <div class="prestart-buttons">
+            <a class="btn btn-rebirth" href="https://lomakin-rebirth.poehali.ws" target="_blank">🔄 REBIRTH</a>
+            <a class="btn btn-movie" href="https://christodollar-movie.poehali.ws" target="_blank">🎬 ФИЛЬМ</a>
+            <a class="btn btn-special" href="https://hristodollars-game.poehali.ws/" target="_blank">✨ ОСОБОЕ</a>
+            <a class="btn btn-chat" href="https://max.ru/join/7L4pJP-zPWQPx5KhVoBB8vN34m2RsOwICIHoQizD7CU" target="_blank">💬 ОБЩЕНИЕ</a>
+            <a class="btn btn-play" href="https://hristodollars-game.poehali.ws/" target="_blank" style="font-size:7px; padding:7px 14px;">▶ ИГРАТЬ</a>
+        </div>
+    </div>
+
+    <!-- СТАРТОВЫЙ ЭКРАН (после пароля) -->
     <div id="start-screen">
         <h1>ХРИСТОДОЛЛАРЫ</h1>
         <p>
@@ -612,6 +808,10 @@
     const modalBtn = document.getElementById('modal-btn');
     const candle = document.getElementById('candle');
     const startScreen = document.getElementById('start-screen');
+    const prestartScreen = document.getElementById('prestart-screen');
+
+    // === ПАРОЛЬ ДЛЯ ПРЕДСТАРТОВОЙ СТРАНИЦЫ (скрыт внутри кода) ===
+    const PRESTART_PASSWORD = "123jesus";
 
     // === АУДИО СИСТЕМА ===
     const bgMusic = document.getElementById('bgMusic');
@@ -632,7 +832,6 @@
         }
     }
 
-    // Пытаемся запустить музыку при первом взаимодействии пользователя
     function tryStartMusic() {
         if (!isMuted) {
             bgMusic.play().catch(() => {});
@@ -645,7 +844,29 @@
     document.addEventListener('touchstart', tryStartMusic);
     document.addEventListener('keydown', tryStartMusic);
 
-    // === СКРЫТЫЕ ПАРОЛИ ===
+    // === ПРОВЕРКА ПАРОЛЯ ПРЕДСТАРТОВОЙ СТРАНИЦЫ ===
+    function checkPrestartPassword() {
+        const input = document.getElementById('prestart-password');
+        const errorEl = document.getElementById('prestart-error');
+        const entered = input.value.trim();
+
+        if (entered === PRESTART_PASSWORD) {
+            // Правильный пароль — показываем стартовый экран
+            prestartScreen.style.display = 'none';
+            startScreen.style.display = 'flex';
+            errorEl.textContent = '';
+            if (!isMuted) {
+                bgMusic.play().catch(() => {});
+            }
+        } else {
+            errorEl.textContent = '❌ НЕВЕРНЫЙ ПАРОЛЬ! Попробуйте снова.';
+            input.value = '';
+            input.style.borderColor = '#e74c3c';
+            setTimeout(() => { input.style.borderColor = '#f1c40f'; }, 800);
+        }
+    }
+
+    // === СКРЫТЫЕ ПАРОЛИ УРОВНЕЙ ===
     const SECRET_PASSWORDS = {
         3: { password: "123jesus", price: "300 РУБ" },
         9: { password: "JESUS5000", price: "5000 РУБ" }
@@ -761,7 +982,6 @@
         startScreen.style.display = 'none';
         gameRunning = true;
         resizeCanvas();
-        // Запуск музыки при старте игры
         if (!isMuted) {
             bgMusic.play().catch(() => {});
         }
